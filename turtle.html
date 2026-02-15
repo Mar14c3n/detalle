@@ -1,0 +1,3116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕Happy Valentine's Day 💕</title>
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* ===== FONDO DE GALAXIA ===== */
+        .galaxy-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                #0f0c29 0%, 
+                #302b63 25%, 
+                #24243e 50%, 
+                #1a1a2e 75%, 
+                #0f0c29 100%
+            );
+            animation: galaxyShift 20s ease-in-out infinite;
+        }
+
+        @keyframes galaxyShift {
+            0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+            50% { filter: hue-rotate(15deg) brightness(1.1); }
+        }
+
+        /* ===== ESTRELLAS ===== */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ===== LUNA ===== */
+        .moon {
+            position: absolute;
+            top: 15%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, 
+                #fff9e6 0%, 
+                #ffe4b3 40%, 
+                #ffd699 100%
+            );
+            border-radius: 50%;
+            box-shadow: 
+                0 0 40px rgba(255, 246, 143, 0.8),
+                0 0 80px rgba(255, 246, 143, 0.5),
+                0 0 120px rgba(255, 246, 143, 0.3),
+                inset -10px -10px 30px rgba(255, 200, 100, 0.3);
+            animation: moonGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes moonGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 40px rgba(255, 246, 143, 0.8),
+                    0 0 80px rgba(255, 246, 143, 0.5),
+                    0 0 120px rgba(255, 246, 143, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 60px rgba(255, 246, 143, 1),
+                    0 0 100px rgba(255, 246, 143, 0.7),
+                    0 0 150px rgba(255, 246, 143, 0.5);
+            }
+        }
+
+        .moon::before,
+        .moon::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(200, 180, 120, 0.3);
+        }
+
+        .moon::before {
+            width: 25px;
+            height: 25px;
+            top: 30%;
+            left: 50%;
+        }
+
+        .moon::after {
+            width: 18px;
+            height: 18px;
+            top: 55%;
+            left: 30%;
+        }
+
+        /* ===== TORTUGUITA ===== */
+        .turtle-container {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            animation: turtleJourney 15s ease-in-out infinite;
+        }
+
+        @keyframes turtleJourney {
+            0% {
+                bottom: 10%;
+                left: 5%;
+                transform: rotate(0deg) scale(1);
+            }
+            45% {
+                bottom: 50%;
+                left: 50%;
+                transform: rotate(25deg) scale(1.2);
+            }
+            50% {
+                bottom: 52%;
+                left: 52%;
+                transform: rotate(30deg) scale(1.2);
+            }
+            55% {
+                bottom: 50%;
+                left: 50%;
+                transform: rotate(25deg) scale(1.2);
+            }
+            100% {
+                bottom: 10%;
+                left: 5%;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        .turtle {
+            width: 80px;
+            height: 60px;
+            position: relative;
+        }
+
+        .shell {
+            width: 60px;
+            height: 50px;
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            border: 3px solid #654321;
+            box-shadow: 
+                inset 0 -5px 10px rgba(0, 0, 0, 0.3),
+                0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .shell::before {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            background: radial-gradient(circle, #A0522D 20%, transparent 21%),
+                        radial-gradient(circle, #A0522D 20%, transparent 21%);
+            background-size: 15px 15px;
+            background-position: 0 0, 7px 7px;
+            border-radius: 50%;
+        }
+
+        .head {
+            width: 25px;
+            height: 20px;
+            background: #90EE90;
+            border-radius: 60% 60% 40% 40%;
+            position: absolute;
+            top: 15px;
+            left: -8px;
+            border: 2px solid #7CCD7C;
+            animation: headMove 2s ease-in-out infinite;
+        }
+
+        @keyframes headMove {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(3px); }
+        }
+
+        .head::before,
+        .head::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #000;
+            border-radius: 50%;
+            top: 6px;
+        }
+
+        .head::before { left: 5px; }
+        .head::after { right: 5px; }
+
+        .leg {
+            width: 15px;
+            height: 12px;
+            background: #90EE90;
+            border-radius: 40%;
+            position: absolute;
+            border: 2px solid #7CCD7C;
+        }
+
+        .leg-front-left {
+            top: 10px;
+            left: 5px;
+            animation: legMove 1s ease-in-out infinite;
+        }
+
+        .leg-front-right {
+            top: 10px;
+            right: 5px;
+            animation: legMove 1s ease-in-out infinite 0.5s;
+        }
+
+        .leg-back-left {
+            bottom: 5px;
+            left: 8px;
+            animation: legMove 1s ease-in-out infinite 0.25s;
+        }
+
+        .leg-back-right {
+            bottom: 5px;
+            right: 8px;
+            animation: legMove 1s ease-in-out infinite 0.75s;
+        }
+
+        @keyframes legMove {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .tail {
+            width: 10px;
+            height: 8px;
+            background: #90EE90;
+            border-radius: 0 50% 50% 0;
+            position: absolute;
+            top: 25px;
+            right: -2px;
+            border: 2px solid #7CCD7C;
+        }
+
+        /* ===== CORAZONES FLOTANTES ===== */
+        .hearts-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 182, 193, 0.6);
+            animation: floatHeart linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== BOTÓN DE MÚSICA ===== */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255, 182, 193, 0.3);
+            border: 2px solid rgba(255, 182, 193, 0.6);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .music-control:hover {
+            background: rgba(255, 182, 193, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+        }
+
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 
+                0 0 10px rgba(255, 182, 193, 0.8),
+                0 0 20px rgba(255, 182, 193, 0.5),
+                2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .message {
+            font-size: 1.5rem;
+            max-width: 700px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== CONTENEDOR DE BOTONES ===== */
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .love-button {
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 
+                0 5px 15px rgba(255, 107, 157, 0.4),
+                0 0 20px rgba(255, 107, 157, 0.3);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .love-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 8px 25px rgba(255, 107, 157, 0.6),
+                0 0 30px rgba(255, 107, 157, 0.5);
+        }
+
+        .love-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* SEGUNDO BOTÓN - Sorpresa Especial */
+        .special-button {
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 
+                0 5px 15px rgba(157, 80, 187, 0.4),
+                0 0 20px rgba(157, 80, 187, 0.3);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .special-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 8px 25px rgba(157, 80, 187, 0.6),
+                0 0 30px rgba(157, 80, 187, 0.5);
+        }
+
+        /* ===== MENSAJE SORPRESA ===== */
+        .surprise-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, 
+                rgba(255, 182, 193, 0.95) 0%, 
+                rgba(255, 105, 180, 0.95) 100%
+            );
+            padding: 40px 50px;
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(255, 182, 193, 0.8);
+            z-index: 1000;
+            max-width: 90%;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .surprise-message.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .surprise-message h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .surprise-message p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .close-button {
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: 2px solid white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .close-button:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* ===== MODAL MINECRAFT/VOXEL - MINI HISTORIA ===== */
+        .minecraft-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .minecraft-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .minecraft-container {
+            background: linear-gradient(180deg, 
+                #87CEEB 0%, 
+                #B0E0E6 50%, 
+                #98D98E 100%
+            );
+            width: 85%;
+            max-width: 900px;
+            height: 75vh;
+            max-height: 650px;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 80px rgba(0, 0, 0, 0.8),
+                0 0 50px rgba(255, 182, 193, 0.5);
+            transform: scale(0.8);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 4px solid rgba(255, 182, 193, 0.6);
+        }
+
+        .minecraft-modal.show .minecraft-container {
+            transform: scale(1);
+        }
+
+        /* TEXTOS DE LA HISTORIA */
+        .story-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .story-text.show {
+            opacity: 1;
+        }
+
+        .story-text-small {
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(255, 182, 193, 0.8);
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .story-text-large {
+            font-size: 2.8rem;
+            color: #E91E63;
+            text-shadow: 
+                3px 3px 6px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 182, 193, 1);
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* OCULTAR PREGUNTA INICIAL DURANTE LA HISTORIA */
+        .valentine-question.hidden {
+            display: none;
+        }
+
+        /* MOSTRAR BOTONES AL FINAL */
+        .valentine-question.story-end {
+            display: block;
+            top: auto;
+            bottom: 15%;
+        }
+
+        /* ESCENA VOXEL */
+        .voxel-scene {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* SUELO VOXEL */
+        .voxel-ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: 
+                linear-gradient(90deg, 
+                    #7CB342 0%, #7CB342 10%, 
+                    #8BC34A 10%, #8BC34A 20%,
+                    #7CB342 20%, #7CB342 30%,
+                    #8BC34A 30%, #8BC34A 40%,
+                    #7CB342 40%, #7CB342 50%,
+                    #8BC34A 50%, #8BC34A 60%,
+                    #7CB342 60%, #7CB342 70%,
+                    #8BC34A 70%, #8BC34A 80%,
+                    #7CB342 80%, #7CB342 90%,
+                    #8BC34A 90%, #8BC34A 100%
+                );
+            box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* PERSONAJE FEMENINO VOXEL */
+        .voxel-character {
+            position: absolute;
+            bottom: 40%;
+            left: 30%;
+            transform: translateX(-50%);
+        }
+
+        /* Cabeza */
+        .voxel-head {
+            width: 60px;
+            height: 60px;
+            background: #FDBCB4;
+            position: relative;
+            margin: 0 auto 5px;
+            box-shadow: 
+                2px 2px 0 rgba(0, 0, 0, 0.2),
+                inset -2px -2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cabello */
+        .voxel-hair {
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            width: 70px;
+            height: 40px;
+            background: #8B4513;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Ojos */
+        .voxel-eyes {
+            position: absolute;
+            top: 25px;
+            left: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .voxel-eye {
+            width: 8px;
+            height: 8px;
+            background: #4A90E2;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Boca */
+        .voxel-mouth {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            width: 20px;
+            height: 4px;
+            background: #E91E63;
+            border-radius: 2px;
+        }
+
+        /* Cuerpo */
+        .voxel-body {
+            width: 60px;
+            height: 70px;
+            background: #FF69B4;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 
+                2px 2px 0 rgba(0, 0, 0, 0.2),
+                inset -2px -2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Brazos */
+        .voxel-arm {
+            width: 15px;
+            height: 50px;
+            background: #FDBCB4;
+            position: absolute;
+            top: 5px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .voxel-arm-left {
+            left: -18px;
+            animation: armWave 2s ease-in-out infinite;
+        }
+
+        .voxel-arm-right {
+            right: -18px;
+        }
+
+        @keyframes armWave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-20deg); }
+        }
+
+        /* Piernas */
+        .voxel-leg {
+            width: 25px;
+            height: 40px;
+            background: #6A5ACD;
+            position: absolute;
+            bottom: -40px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .voxel-leg-left {
+            left: 5px;
+        }
+
+        .voxel-leg-right {
+            right: 5px;
+        }
+
+        /* LOBITO VOXEL */
+        .voxel-wolf {
+            position: absolute;
+            bottom: 40%;
+            right: 30%;
+            transform: translateX(50%);
+        }
+
+        /* Cabeza del lobo */
+        .wolf-head {
+            width: 50px;
+            height: 40px;
+            background: #B0B0B0;
+            position: relative;
+            margin: 0 auto 3px;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Orejas */
+        .wolf-ear {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            background: #B0B0B0;
+            top: -15px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .wolf-ear-left { left: 5px; }
+        .wolf-ear-right { right: 5px; }
+
+        /* Hocico */
+        .wolf-snout {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            background: #E0E0E0;
+            bottom: 0;
+            left: 10px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Nariz */
+        .wolf-nose {
+            position: absolute;
+            width: 8px;
+            height: 6px;
+            background: #333;
+            bottom: 2px;
+            left: 11px;
+        }
+
+        /* Ojos del lobo */
+        .wolf-eyes {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .wolf-eye {
+            width: 6px;
+            height: 6px;
+            background: #FFD700;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Cuerpo del lobo */
+        .wolf-body {
+            width: 50px;
+            height: 40px;
+            background: #B0B0B0;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Patas del lobo */
+        .wolf-leg {
+            width: 10px;
+            height: 25px;
+            background: #B0B0B0;
+            position: absolute;
+            bottom: -25px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .wolf-leg-fl { left: 5px; }
+        .wolf-leg-fr { left: 20px; }
+        .wolf-leg-bl { right: 20px; }
+        .wolf-leg-br { right: 5px; }
+
+        /* Cola del lobo */
+        .wolf-tail {
+            width: 12px;
+            height: 30px;
+            background: #B0B0B0;
+            position: absolute;
+            right: -8px;
+            top: 5px;
+            transform-origin: top;
+            animation: tailWag 1s ease-in-out infinite;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes tailWag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+        }
+
+        /* ANIMACIÓN DE COLA RÁPIDA Y FELIZ */
+        .wolf-tail.excited {
+            animation: tailWagFast 0.3s ease-in-out infinite;
+        }
+
+        @keyframes tailWagFast {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(25deg); }
+        }
+
+        /* ANIMACIÓN DE SALTO DEL LOBO */
+        .voxel-wolf.jumping {
+            animation: wolfJump 0.6s ease-in-out;
+        }
+
+        @keyframes wolfJump {
+            0%, 100% { transform: translateX(50%) translateY(0); }
+            50% { transform: translateX(50%) translateY(-30px); }
+        }
+
+        /* ===== PERSONAJE MASCULINO VOXEL ===== */
+        /* PUEDES MODIFICAR LOS COLORES Y TAMAÑOS DEL CHICO AQUÍ */
+        .voxel-boy {
+            position: absolute;
+            bottom: 40%;
+            left: -100px; /* Empieza fuera de pantalla */
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: left 2s ease-in-out, opacity 0.5s ease; /* ← MODIFICAR velocidad de entrada */
+        }
+
+        .voxel-boy.entering {
+            left: 45%; /* Posición cerca de la chica */
+            opacity: 1;
+        }
+
+        /* Cabeza del chico */
+        .boy-head {
+            width: 60px;
+            height: 60px;
+            background: #FFD7B5; /* ← MODIFICAR color de piel del chico */
+            position: relative;
+            margin: 0 auto 5px;
+            box-shadow: 
+                2px 2px 0 rgba(0, 0, 0, 0.2),
+                inset -2px -2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cabello del chico */
+        .boy-hair {
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            width: 70px;
+            height: 40px;
+            background: #4A4A4A; /* ← MODIFICAR color de cabello del chico */
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Ojos del chico */
+        .boy-eyes {
+            position: absolute;
+            top: 25px;
+            left: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .boy-eye {
+            width: 8px;
+            height: 8px;
+            background: #8B4513; /* ← MODIFICAR color de ojos del chico */
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sonrisa del chico */
+        .boy-smile {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            width: 30px;
+            height: 5px;
+            background: #000;
+            border-radius: 0 0 15px 15px;
+        }
+
+        /* Cuerpo del chico */
+        .boy-body {
+            width: 60px;
+            height: 70px;
+            background: #4A90E2; /* ← MODIFICAR color de ropa del chico */
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 
+                2px 2px 0 rgba(0, 0, 0, 0.2),
+                inset -2px -2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Brazos del chico */
+        .boy-arm {
+            width: 15px;
+            height: 50px;
+            background: #FFD7B5;
+            position: absolute;
+            top: 5px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .boy-arm-left {
+            left: -18px;
+        }
+
+        .boy-arm-right {
+            right: -18px;
+        }
+
+        /* Animación de brazo extendido para tomar la mano */
+        .boy-arm-left.reaching {
+            transform: rotate(-45deg);
+            transform-origin: top center;
+        }
+
+        /* Piernas del chico */
+        .boy-leg {
+            width: 25px;
+            height: 40px;
+            background: #2C5AA0;
+            position: absolute;
+            bottom: -40px;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .boy-leg-left {
+            left: 5px;
+        }
+
+        .boy-leg-right {
+            right: 5px;
+        }
+
+        /* ANIMACIONES DE LA MINI-HISTORIA */
+        
+        /* ESCENA 1: Niña voltea hacia el chico */
+        .voxel-character.looking-right {
+            animation: turnRight 1s ease-in-out forwards;
+        }
+
+        @keyframes turnRight {
+            to { transform: translateX(-50%) scaleX(-1); } /* Voltear horizontalmente */
+        }
+
+        /* ESCENA 2: Chico entra caminando */
+        .voxel-boy.walking-in {
+            left: 100%; /* Empieza fuera a la derecha */
+            opacity: 1;
+            animation: walkIn 3s ease-in-out forwards; /* ← MODIFICAR velocidad de entrada (3s) */
+        }
+
+        @keyframes walkIn {
+            to { 
+                left: 55%; /* ← MODIFICAR posición final */
+            }
+        }
+
+        /* Animación de caminar (piernas) */
+        .boy-leg.walking {
+            animation: legWalk 0.6s ease-in-out infinite;
+        }
+
+        @keyframes legWalk {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* ESCENA 2: Acercarse para tomarse de la mano */
+        .voxel-character.move-closer-story {
+            animation: moveToCenter 1.5s ease-in-out forwards; /* ← MODIFICAR velocidad (1.5s) */
+        }
+
+        .voxel-boy.move-closer-story {
+            animation: moveToGirl 1.5s ease-in-out forwards; /* ← MODIFICAR velocidad (1.5s) */
+        }
+
+        @keyframes moveToCenter {
+            to { left: 45%; } /* ← MODIFICAR posición final de la chica */
+        }
+
+        @keyframes moveToGirl {
+            to { left: 50%; } /* ← MODIFICAR posición final del chico */
+        }
+
+        /* ESCENA 3: Abrazo final */
+        .voxel-character.final-hug,
+        .voxel-boy.final-hug {
+            animation: hugTogether 1s ease-in-out forwards; /* ← MODIFICAR velocidad del abrazo (1s) */
+        }
+
+        @keyframes hugTogether {
+            to { 
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+        /* Partículas brillantes */
+        .sparkle {
+            position: absolute;
+            font-size: 25px;
+            pointer-events: none;
+            animation: sparkleAnimation 1.5s ease-out forwards;
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Brazo de la chica extendido */
+        .voxel-arm-right.reaching {
+            transform: rotate(45deg);
+            transform-origin: top center;
+        }
+
+        /* Animación de abrazo */
+        .voxel-character.hugging,
+        .voxel-boy.hugging {
+            animation: hugMove 0.8s ease-in-out forwards; /* ← MODIFICAR duración del abrazo (0.8s) */
+        }
+
+        @keyframes hugMove {
+            to { 
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+
+        /* Corazones grandes durante abrazo */
+        .big-heart {
+            position: absolute;
+            font-size: 40px;
+            animation: bigHeartFloat 2s ease-in-out infinite; /* ← MODIFICAR velocidad de flotación (2s) */
+            pointer-events: none;
+        }
+
+        @keyframes bigHeartFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2); /* ← MODIFICAR altura de flotación (-20px) */
+                opacity: 1;
+            }
+        }
+
+        /* FLORES VOXEL */
+        .voxel-flowers {
+            position: absolute;
+            bottom: 40%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 10%;
+        }
+
+        .voxel-flower {
+            position: relative;
+        }
+
+        .flower-stem {
+            width: 6px;
+            height: 40px;
+            background: #4CAF50;
+            margin: 0 auto;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flower-petals {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        .flower-petal {
+            width: 8px;
+            height: 8px;
+            background: #FF69B4;
+            position: absolute;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .petal-1 { top: 0; left: 6px; }
+        .petal-2 { top: 6px; left: 12px; }
+        .petal-3 { top: 12px; left: 6px; }
+        .petal-4 { top: 6px; left: 0; }
+        .flower-center { 
+            top: 6px; 
+            left: 6px; 
+            background: #FFC107; 
+        }
+
+        /* PARTÍCULAS DE CORAZONES EN ESCENA */
+        .scene-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .scene-heart {
+            position: absolute;
+            font-size: 25px;
+            animation: floatSceneHeart 4s ease-in-out infinite;
+        }
+
+        @keyframes floatSceneHeart {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-60px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* PREGUNTA Y BOTONES */
+        .valentine-question {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .valentine-question h2 {
+            font-size: 2.5rem;
+            color: #E91E63;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .answer-btn {
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .answer-btn-yes {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+            color: white;
+        }
+
+        .answer-btn-yes:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.5);
+        }
+
+        .answer-btn-obvio {
+            background: linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%);
+            color: white;
+        }
+
+        .answer-btn-obvio:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(157, 80, 187, 0.5);
+        }
+
+        /* MENSAJE DE CONFIRMACIÓN */
+        .confirmation-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px 60px;
+            border-radius: 25px;
+            text-align: center;
+            z-index: 20;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .confirmation-message.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .confirmation-message h2 {
+            font-size: 3rem;
+            color: #E91E63;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-message p {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* BOTÓN CERRAR MODAL */
+        .close-modal-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 30;
+        }
+
+        .close-modal-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+
+        /* ===== SECCIÓN DE GALERÍA DE FOTOS EN CORAZÓN ===== */
+        .photo-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .photo-section.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            max-height: 700px;
+        }
+
+        .section-title {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* CORAZÓN CONTENEDOR */
+        .heart-shape {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* POSICIONES DE LAS FOTOS EN FORMA DE CORAZÓN */
+        .photo-frame {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 4px solid rgba(255, 182, 193, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(255, 182, 193, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.15) rotate(5deg);
+            z-index: 10;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 182, 193, 0.8);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* PLACEHOLDER SI NO HAY IMAGEN */
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+            color: white;
+        }
+
+        /* Distribución en forma de corazón - 12 fotos */
+        .photo-frame:nth-child(1) { top: 15%; left: 20%; }
+        .photo-frame:nth-child(2) { top: 15%; right: 20%; }
+        .photo-frame:nth-child(3) { top: 8%; left: 35%; }
+        .photo-frame:nth-child(4) { top: 8%; right: 35%; }
+        .photo-frame:nth-child(5) { top: 30%; left: 10%; }
+        .photo-frame:nth-child(6) { top: 30%; right: 10%; }
+        .photo-frame:nth-child(7) { top: 45%; left: 15%; }
+        .photo-frame:nth-child(8) { top: 45%; right: 15%; }
+        .photo-frame:nth-child(9) { top: 60%; left: 25%; }
+        .photo-frame:nth-child(10) { top: 60%; right: 25%; }
+        .photo-frame:nth-child(11) { top: 75%; left: 35%; }
+        .photo-frame:nth-child(12) { bottom: 8%; left: 50%; transform: translateX(-50%); }
+
+        /* ===== SECCIÓN DE JARDÍN DE FLORES ===== */
+        .flower-garden-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                #87CEEB 0%, 
+                #B0E0E6 30%, 
+                #90EE90 70%, 
+                #7CB342 100%
+            );
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            overflow: hidden;
+        }
+
+        .flower-garden-section.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .garden-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+        }
+
+        .garden-title {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 105, 180, 0.6);
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        /* SOL */
+        .sun {
+            position: absolute;
+            top: 50px;
+            right: 80px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+            animation: sunPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes sunPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Rayos del sol */
+        .sun::before,
+        .sun::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .sun::before {
+            box-shadow: 
+                0 0 0 10px rgba(255, 215, 0, 0.3),
+                0 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        /* NUBES */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 100px;
+            animation: floatCloud linear infinite;
+        }
+
+        @keyframes floatCloud {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100vw); }
+        }
+
+        .cloud-1 {
+            top: 80px;
+            left: 10%;
+            width: 100px;
+            height: 40px;
+            animation-duration: 30s;
+        }
+
+        .cloud-1::before,
+        .cloud-1::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+
+        .cloud-1::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud-1::after {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            right: 10px;
+        }
+
+        .cloud-2 {
+            top: 120px;
+            left: 60%;
+            width: 120px;
+            height: 45px;
+            animation-duration: 40s;
+            animation-delay: -10s;
+        }
+
+        .cloud-2::before,
+        .cloud-2::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+
+        .cloud-2::before {
+            width: 55px;
+            height: 55px;
+            top: -28px;
+            left: 15px;
+        }
+
+        .cloud-2::after {
+            width: 65px;
+            height: 65px;
+            top: -35px;
+            right: 15px;
+        }
+
+        /* MARIPOSAS */
+        .butterfly {
+            position: absolute;
+            font-size: 30px;
+            animation: butterflyFly 15s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        @keyframes butterflyFly {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(200px, -100px) rotate(15deg);
+            }
+            50% {
+                transform: translate(400px, 50px) rotate(-10deg);
+            }
+            75% {
+                transform: translate(200px, 150px) rotate(20deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        .butterfly-1 {
+            top: 30%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .butterfly-2 {
+            top: 20%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .butterfly-3 {
+            top: 50%;
+            left: 50%;
+            animation-delay: -10s;
+        }
+
+        /* FLORES DEL JARDÍN */
+        .garden-flowers {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 0 5%;
+            flex-wrap: wrap;
+        }
+
+        .garden-flower {
+            position: relative;
+            margin: 0 10px;
+            animation: flowerGrow 1s ease-out;
+        }
+
+        @keyframes flowerGrow {
+            0% {
+                transform: translateY(100px) scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .garden-flower-stem {
+            width: 8px;
+            height: 150px;
+            background: linear-gradient(180deg, #4CAF50 0%, #2E7D32 100%);
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hoja */
+        .garden-flower-stem::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            background: #4CAF50;
+            border-radius: 0 50% 50% 0;
+            top: 50%;
+            left: -25px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .garden-flower-stem::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            background: #4CAF50;
+            border-radius: 50% 0 0 50%;
+            top: 60%;
+            right: -25px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .garden-flower-head {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+        }
+
+        .garden-flower-petal {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Colores de flores variados */
+        .garden-flower:nth-child(1) .garden-flower-petal { background: #FF1744; }
+        .garden-flower:nth-child(2) .garden-flower-petal { background: #FF69B4; }
+        .garden-flower:nth-child(3) .garden-flower-petal { background: #FFC107; }
+        .garden-flower:nth-child(4) .garden-flower-petal { background: #E91E63; }
+        .garden-flower:nth-child(5) .garden-flower-petal { background: #9C27B0; }
+        .garden-flower:nth-child(6) .garden-flower-petal { background: #FF4081; }
+        .garden-flower:nth-child(7) .garden-flower-petal { background: #FF6F00; }
+        .garden-flower:nth-child(8) .garden-flower-petal { background: #D500F9; }
+        .garden-flower:nth-child(9) .garden-flower-petal { background: #FF5252; }
+        .garden-flower:nth-child(10) .garden-flower-petal { background: #FFEB3B; }
+
+        /* Posiciones de pétalos (5 pétalos) */
+        .petal-1 { top: -10px; left: 25px; }
+        .petal-2 { top: 10px; right: 5px; }
+        .petal-3 { bottom: 0px; left: 25px; }
+        .petal-4 { top: 10px; left: 5px; }
+        .petal-5 { 
+            top: 15px; 
+            left: 25px; 
+            background: #FFF176 !important; 
+            width: 20px; 
+            height: 20px;
+        }
+
+        /* Animación de balanceo de flores */
+        .garden-flower {
+            animation: flowerGrow 1s ease-out, flowerSway 3s ease-in-out infinite;
+        }
+
+        @keyframes flowerSway {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .garden-flower:nth-child(odd) {
+            animation: flowerGrow 1s ease-out, flowerSway 4s ease-in-out infinite;
+        }
+
+        .garden-flower:nth-child(1) { animation-delay: 0s, 0s; }
+        .garden-flower:nth-child(2) { animation-delay: 0.1s, 0.5s; }
+        .garden-flower:nth-child(3) { animation-delay: 0.2s, 1s; }
+        .garden-flower:nth-child(4) { animation-delay: 0.3s, 1.5s; }
+        .garden-flower:nth-child(5) { animation-delay: 0.4s, 2s; }
+        .garden-flower:nth-child(6) { animation-delay: 0.5s, 2.5s; }
+        .garden-flower:nth-child(7) { animation-delay: 0.6s, 0.7s; }
+        .garden-flower:nth-child(8) { animation-delay: 0.7s, 1.2s; }
+        .garden-flower:nth-child(9) { animation-delay: 0.8s, 1.8s; }
+        .garden-flower:nth-child(10) { animation-delay: 0.9s, 2.3s; }
+
+        /* MENSAJE ROMÁNTICO EN EL JARDÍN */
+        .garden-message {
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 50px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 10;
+            max-width: 80%;
+        }
+
+        .garden-message h3 {
+            font-size: 2rem;
+            color: #E91E63;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .garden-message p {
+            font-size: 1.3rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* BOTÓN CERRAR SECCIONES */
+        .close-section-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 182, 193, 0.8);
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 100;
+            color: #E91E63;
+            font-weight: bold;
+        }
+
+        .close-section-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.15) rotate(90deg);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .message {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+
+            .love-button,
+            .special-button {
+                font-size: 1rem;
+                padding: 12px 30px;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .moon {
+                width: 80px;
+                height: 80px;
+                top: 10%;
+                right: 10%;
+            }
+
+            .turtle {
+                width: 60px;
+                height: 45px;
+            }
+
+            .shell {
+                width: 45px;
+                height: 38px;
+            }
+
+            .surprise-message h2 {
+                font-size: 1.8rem;
+            }
+
+            .surprise-message p {
+                font-size: 1.1rem;
+            }
+
+            .valentine-question h2 {
+                font-size: 1.8rem;
+            }
+
+            .answer-buttons {
+                flex-direction: column;
+            }
+
+            .answer-btn {
+                font-size: 1.1rem;
+                padding: 12px 25px;
+            }
+
+            .voxel-character {
+                left: 25%;
+                transform: scale(0.8);
+            }
+
+            .voxel-wolf {
+                right: 25%;
+                transform: scale(0.8);
+            }
+
+            .music-control {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            /* RESPONSIVE PARA GALERÍA DE FOTOS */
+            .section-title {
+                font-size: 1.8rem;
+                top: -50px;
+            }
+
+            .photo-frame {
+                width: 80px;
+                height: 80px;
+                border: 3px solid rgba(255, 182, 193, 0.8);
+            }
+
+            /* RESPONSIVE PARA JARDÍN DE FLORES */
+            .garden-title {
+                font-size: 2rem;
+                top: 20px;
+            }
+
+            .sun {
+                width: 70px;
+                height: 70px;
+                top: 30px;
+                right: 30px;
+            }
+
+            .garden-flower-stem {
+                height: 100px;
+            }
+
+            .garden-flower-head {
+                width: 60px;
+                height: 60px;
+            }
+
+            .garden-flower-petal {
+                width: 22px;
+                height: 22px;
+            }
+
+            .garden-message {
+                padding: 20px 30px;
+                bottom: 20%;
+            }
+
+            .garden-message h3 {
+                font-size: 1.5rem;
+            }
+
+            .garden-message p {
+                font-size: 1.1rem;
+            }
+
+            .butterfly {
+                font-size: 20px;
+            }
+
+            /* RESPONSIVE PARA TEXTOS DE LA HISTORIA */
+            .story-text-small {
+                font-size: 1.3rem;
+                padding: 10px 20px;
+            }
+
+            .story-text-large {
+                font-size: 2rem;
+                padding: 20px 30px;
+            }
+
+            .valentine-question.story-end {
+                bottom: 10%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .valentine-question h2 {
+                font-size: 1.5rem;
+            }
+
+            .confirmation-message h2 {
+                font-size: 2rem;
+            }
+
+            .confirmation-message p {
+                font-size: 1.2rem;
+            }
+
+            /* RESPONSIVE PARA TEXTOS DE LA HISTORIA EN MÓVIL */
+            .story-text-small {
+                font-size: 1.1rem;
+                padding: 8px 15px;
+            }
+
+            .story-text-large {
+                font-size: 1.6rem;
+                padding: 15px 25px;
+            }
+        }
+
+.floating-messages {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.floating-messages span {
+  position: absolute;
+  max-width: 260px;
+  padding: 10px 14px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #ff7eb3, #ffb6c1);
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-align: center;
+  opacity: 0;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  animation: fadeFloat 7s ease-in-out infinite;
+}
+
+.floating-messages span:nth-child(1){ top:5%; left:50%; animation-delay:0s;}
+.floating-messages span:nth-child(2){ top:18%; left:78%; animation-delay:1.5s;}
+.floating-messages span:nth-child(3){ top:45%; left:88%; animation-delay:3s;}
+.floating-messages span:nth-child(4){ top:70%; left:70%; animation-delay:4.5s;}
+.floating-messages span:nth-child(5){ top:60%; left:12%; animation-delay:6s;}
+.floating-messages span:nth-child(6){ top:25%; left:5%; animation-delay:7.5s;}
+
+@keyframes fadeFloat {
+  0% { transform: translateY(15px); opacity:0; }
+
+  15% { opacity:1; }
+  85% { opacity:1; }
+
+  100% { transform: translateY(-15px); opacity:0; }
+}
+  </style>
+</head>
+<body>
+    <!-- AUDIO DE FONDO -->
+    <!-- ============================================================ -->
+    <audio id="backgroundMusic" loop>
+        <source src="Patrick Watson - Je te laisserai des mots (sub. español + francés) - Marinosaurio.mp3" type="audio/mpeg">
+        <!-- Nota: Esta es una canción de ejemplo. Reemplázala con tu canción romántica favorita -->
+    </audio>
+
+    <!-- Fondo de Galaxia -->
+    <div class="galaxy-background"></div>
+
+    <!-- Estrellas -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Corazones Flotantes -->
+    <div class="hearts-container" id="hearts"></div>
+
+    <!-- Luna -->
+    <div class="moon"></div>
+
+    <!-- Tortuguita -->
+    <div class="turtle-container">
+        <div class="turtle">
+            <div class="shell"></div>
+            <div class="head"></div>
+            <div class="leg leg-front-left"></div>
+            <div class="leg leg-front-right"></div>
+            <div class="leg leg-back-left"></div>
+            <div class="leg leg-back-right"></div>
+            <div class="tail"></div>
+        </div>
+    </div>
+
+    <!-- BOTÓN DE CONTROL DE MÚSICA -->
+    <div class="music-control" id="musicControl" onclick="toggleMusic()">
+        🎵
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="content">
+        <!-- PUEDES MODIFICAR ESTOS TEXTOS -->
+        <h1 class="title">💕 Feliz San Valentín corazon 💕</h1>
+        <p class="message">
+            Como esta tortuguita que intenta alcanzar la luna,<br>
+            así intento yo llegar siempre a ti.<br>
+            Aunque el camino sea largo y vuelva a empezar,<br>
+            nunca me rendiré porque tú eres mi luna,<br>
+            mi luz en la oscuridad. ✨🌙
+        </p>
+        
+        <!-- CONTENEDOR DE BOTONES -->
+        <div class="buttons-container">
+            <button class="love-button" onclick="showSurprise()">
+                💌 Abre
+            </button>
+            
+            <!-- NUEVO BOTÓN - Sorpresa Especial -->
+            <button class="special-button" onclick="showMinecraftModal()">
+                💖 Sorpresa Especial
+            </button>
+
+            <!-- BOTÓN - Galería de Fotos -->
+            <button class="love-button" onclick="showPhotoGallery()">
+                📸 Nuestros Momentos
+            </button>
+
+            <!-- BOTÓN - Jardín de Flores -->
+            <button class="special-button" onclick="showFlowerGarden()">
+                🌸 Jardín del Amor
+            </button>
+        </div>
+    </div>
+
+    <!-- Mensaje Sorpresa Original -->
+    <div class="surprise-message" id="surpriseMessage">
+        <!-- PUEDES MODIFICAR ESTOS TEXTOS -->
+        <h2>💖 Te Amo 💖</h2>
+        <p>
+            Me gusta tenerte en mi vida.<br>
+           No todo tiene que ser perfecto,<br>
+            pero contigo se siente bonito y tranquilo.<br>
+            Gracias por tu compañía,<br>
+            tus risas y tu forma de estar.<br><br>
+            <strong>Dejare de amarte hasta que
+                la tortuguita llegue a la luna🌙🐢</strong>
+        </p>
+        <button class="close-button" onclick="closeSurprise()">Cerrar</button>
+    </div>
+
+    <!-- ========== SECCIÓN DE GALERÍA DE FOTOS EN CORAZÓN ========== -->
+    <div class="photo-section" id="photoSection">
+        <button class="close-section-btn" onclick="closePhotoGallery()">✕</button>
+        <div class="photo-container">
+            <h2 class="section-title">💕 Nuestros Momentos 💕</h2>
+            <div class="heart-shape">
+                <!-- AQUÍ PUEDES AGREGAR TUS FOTOS -->
+                <!-- Para agregar una foto, cambia la clase "photo-placeholder" por una etiqueta <img src="URL_DE_TU_FOTO"> -->
+               
+                <div class="photo-frame">
+                    <div class="assets/f1.jpeg">💕</div>
+                    <img src="assets/f1.jpeg" alt="Momento1">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f2.jpeg">❤️</div>
+                    <img src="assets/f2.jpeg" alt="Momento2"> 
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f3.jpeg">💖</div>
+                    <img src="assets/f3.jpeg" alt="Momento 3">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f4.jpeg">💗</div>
+                    <img src="assets/f4.jpeg" alt="Momento 4">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f5.jpeg">💝</div>
+                    <img src="assets/f5.jpeg" alt="Momento 5">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f6.jpeg">💓</div>
+                    <img src="assets/f6.jpeg" alt="Momento 6">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f7.jpeg">💞</div>
+                    <img src="assets/f7.jpeg" alt="Momento 7"> 
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f8.jpeg">💟</div>
+                    <img src="assets/f8.jpeg" alt="Momento 8"> 
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f9.jpeg">❣️</div>
+                    <img src="assets/f9.jpeg" alt="Momento 9">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f10.jpeg">💘</div>
+                    <img src="assets/f10.jpeg" alt="Momento 10">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f11.jpeg">💌</div>
+                    <img src="assets/f11.jpeg" alt="Momento 11">
+                </div>
+                
+                <div class="photo-frame">
+                    <div class="assets/f12.jpeg">💑</div>
+                 <img src="assets/f12.jpeg" alt="Momento 12">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MINECRAFT/VOXEL -->
+    <div class="minecraft-modal" id="minecraftModal">
+        <div class="minecraft-container">
+            <!-- Botón cerrar -->
+            <button class="close-modal-btn" onclick="closeMinecraftModal()">✕</button>
+            
+            <!-- Escena Voxel -->
+            <div class="voxel-scene">
+                <!-- Suelo -->
+                <div class="voxel-ground"></div>
+                
+                <!-- Personaje Femenino -->
+                <div class="voxel-character">
+                    <div class="voxel-head">
+                        <div class="voxel-hair"></div>
+                        <div class="voxel-eyes">
+                            <div class="voxel-eye"></div>
+                            <div class="voxel-eye"></div>
+                        </div>
+                        <div class="voxel-mouth"></div>
+                    </div>
+                    <div class="voxel-body">
+                        <div class="voxel-arm voxel-arm-left"></div>
+                        <div class="voxel-arm voxel-arm-right"></div>
+                        <div class="voxel-leg voxel-leg-left"></div>
+                        <div class="voxel-leg voxel-leg-right"></div>
+                    </div>
+                </div>
+
+                <!-- Personaje Masculino (inicialmente oculto) -->
+                <div class="voxel-boy" id="voxelBoy">
+                    <div class="boy-head">
+                        <div class="boy-hair"></div>
+                        <div class="boy-eyes">
+                            <div class="boy-eye"></div>
+                            <div class="boy-eye"></div>
+                        </div>
+                        <div class="boy-smile"></div>
+                    </div>
+                    <div class="boy-body">
+                        <div class="boy-arm boy-arm-left"></div>
+                        <div class="boy-arm boy-arm-right"></div>
+                        <div class="boy-leg boy-leg-left"></div>
+                        <div class="boy-leg boy-leg-right"></div>
+                    </div>
+                </div>
+                
+                <!-- Lobito -->
+                <div class="voxel-wolf">
+                    <div class="wolf-head">
+                        <div class="wolf-ear wolf-ear-left"></div>
+                        <div class="wolf-ear wolf-ear-right"></div>
+                        <div class="wolf-snout">
+                            <div class="wolf-nose"></div>
+                        </div>
+                        <div class="wolf-eyes">
+                            <div class="wolf-eye"></div>
+                            <div class="wolf-eye"></div>
+                        </div>
+                    </div>
+                    <div class="wolf-body">
+                        <div class="wolf-tail"></div>
+                        <div class="wolf-leg wolf-leg-fl"></div>
+                        <div class="wolf-leg wolf-leg-fr"></div>
+                        <div class="wolf-leg wolf-leg-bl"></div>
+                        <div class="wolf-leg wolf-leg-br"></div>
+                    </div>
+                </div>
+                
+                <!-- Flores -->
+                <div class="voxel-flowers">
+                    <div class="voxel-flower">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals">
+                            <div class="flower-petal petal-1"></div>
+                            <div class="flower-petal petal-2"></div>
+                            <div class="flower-petal petal-3"></div>
+                            <div class="flower-petal petal-4"></div>
+                            <div class="flower-petal flower-center"></div>
+                        </div>
+                    </div>
+                    <div class="voxel-flower">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals">
+                            <div class="flower-petal petal-1"></div>
+                            <div class="flower-petal petal-2"></div>
+                            <div class="flower-petal petal-3"></div>
+                            <div class="flower-petal petal-4"></div>
+                            <div class="flower-petal flower-center"></div>
+                        </div>
+                    </div>
+                    <div class="voxel-flower">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals">
+                            <div class="flower-petal petal-1"></div>
+                            <div class="flower-petal petal-2"></div>
+                            <div class="flower-petal petal-3"></div>
+                            <div class="flower-petal petal-4"></div>
+                            <div class="flower-petal flower-center"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Corazones flotantes en la escena -->
+                <div class="scene-hearts" id="sceneHearts"></div>
+                
+                <!-- TEXTOS DE LA MINI-HISTORIA -->
+                <!-- PUEDES MODIFICAR ESTOS TEXTOS AQUÍ -->
+                <div class="story-text" id="storyText1">
+                    <div class="story-text-small">Tengo algo que preguntarte…</div>
+                </div>
+                
+                <div class="story-text" id="storyText3">
+                    <div class="story-text-large"></div>
+                </div>
+                
+                <!-- Pregunta de San Valentín -->
+                <div class="valentine-question" id="valentineQuestion">
+                    <!-- PUEDES MODIFICAR ESTE TEXTO -->
+                    <h2>¿Quieres ser mi San Valentín?</h2>
+                    <div class="answer-buttons">
+                        <button class="answer-btn answer-btn-yes" onclick="answerYes()">
+                            Sí 💘
+                        </button>
+                        <button class="answer-btn answer-btn-obvio" onclick="answerYes()">
+                            Obvio sí ✨
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mensaje de Confirmación -->
+                <div class="confirmation-message" id="confirmationMessage">
+                    <!-- PUEDES MODIFICAR ESTOS TEXTOS -->
+                    <h2>¡Sí! 🎉💕</h2>
+                    <p>
+                        Logro obtenido: Ser mi San Valentín 🏆💌<br>
+                        Te amo!!<br>
+        
+                    </p>
+                    <button class="close-button" onclick="closeMinecraftModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SECCIÓN DE JARDÍN DE FLORES ========== -->
+    <div class="flower-garden-section" id="flowerGarden">
+        <button class="close-section-btn" onclick="closeFlowerGarden()">✕</button>
+        <div class="garden-container">
+            <h2 class="garden-title">🌸 Jardín del Amor 🌸</h2>
+            
+            <!-- Sol -->
+            <div class="sun"></div>
+            
+            <!-- Nubes -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            
+            <!-- Mariposas -->
+            <div class="butterfly butterfly-1">🦋</div>
+            <div class="butterfly butterfly-2">🦋</div>
+            <div class="butterfly butterfly-3">🦋</div>
+              <div class="floating-messages">
+  <span>Dejaré de amarte cuando el mar se quede sin agua. 💖🌊</span>
+  <span>Te voy a querer hasta que el sol se canse de salir☀️.</span>
+  <span>Dejaré de amarte cuando las estrellas apaguen su luz⭐.</span>
+  <span>Te amaré hasta que el viento deje de soplar.🍃</span>
+  <span>Dejaré de amarte cuando el cielo se quede sin azul.</span>
+  <span>Hasta que la última gota de lluvia caiga, ahí termina mi amor… o sea, nunca❤️.</span>
+</div>
+            <!-- Mensaje Romántico -->
+            <div class="garden-message">
+               
+                <!-- PUEDES MODIFICAR ESTE TEXTO -->
+                <h3>Cada flor en este jardín</h3>
+                <p>
+                    representa un momento especial contigo.<br>
+                    Juntos hemos cultivado un amor<br>
+                    que florece más hermoso cada día. 🌺💕
+                </p>
+            </div>
+            
+            <!-- Flores del Jardín -->
+            <div class="garden-flowers">
+                <!-- PUEDES AGREGAR MÁS FLORES COPIANDO ESTE BLOQUE -->
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+                
+                <div class="garden-flower">
+                    <div class="garden-flower-stem"></div>
+                    <div class="garden-flower-head">
+                        <div class="garden-flower-petal petal-1"></div>
+                        <div class="garden-flower-petal petal-2"></div>
+                        <div class="garden-flower-petal petal-3"></div>
+                        <div class="garden-flower-petal petal-4"></div>
+                        <div class="garden-flower-petal petal-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== VARIABLES GLOBALES =====
+        let isMusicPlaying = false;
+        let musicStarted = false; // Para iniciar música solo una vez
+        const music = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+
+        // ===== CONFIGURACIÓN INICIAL DE MÚSICA =====
+        // PUEDES MODIFICAR EL VOLUMEN AQUÍ (0.0 a 1.0)
+        music.volume = 0; // Comenzamos en 0 para el fade-in
+
+        // ===== INICIAR MÚSICA CON FADE-IN =====
+        function startMusicWithFade() {
+            if (!musicStarted) {
+                music.play().catch(e => {
+                    console.log('No se pudo reproducir la música:', e);
+                });
+                
+                // FADE-IN DE 2 SEGUNDOS - PUEDES MODIFICAR LA DURACIÓN AQUÍ
+                const fadeInDuration = 2000; // milisegundos
+                const targetVolume = 0.4; // Volumen final (40%)
+                const steps = 50;
+                const volumeIncrement = targetVolume / steps;
+                const intervalTime = fadeInDuration / steps;
+                
+                let currentStep = 0;
+                const fadeInterval = setInterval(() => {
+                    currentStep++;
+                    music.volume = Math.min(volumeIncrement * currentStep, targetVolume);
+                    
+                    if (currentStep >= steps) {
+                        clearInterval(fadeInterval);
+                        music.volume = targetVolume;
+                    }
+                }, intervalTime);
+                
+                musicStarted = true;
+                isMusicPlaying = true;
+                musicControl.innerHTML = '🔊';
+            }
+        }
+
+        // ===== CONTROL DE MÚSICA (PAUSAR/REANUDAR) =====
+        function toggleMusic() {
+            // Si la música nunca ha comenzado, iniciarla
+            if (!musicStarted) {
+                startMusicWithFade();
+                return;
+            }
+            
+            // Si ya comenzó, solo pausar/reanudar
+            if (isMusicPlaying) {
+                music.pause();
+                musicControl.innerHTML = '🎵';
+                isMusicPlaying = false;
+            } else {
+                music.play().catch(e => {
+                    console.log('No se pudo reproducir la música:', e);
+                });
+                musicControl.innerHTML = '🔊';
+                isMusicPlaying = true;
+            }
+        }
+
+        // ===== CREAR ESTRELLAS =====
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 150;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // ===== CREAR CORAZONES FLOTANTES =====
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const numberOfHearts = 20;
+
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💕';
+                
+                heart.style.left = Math.random() * 100 + '%';
+                
+                const duration = Math.random() * 10 + 15;
+                heart.style.animationDuration = duration + 's';
+                
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                const size = Math.random() * 15 + 15;
+                heart.style.fontSize = size + 'px';
+                
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // ===== CREAR CORAZONES EN LA ESCENA VOXEL =====
+        function createSceneHearts() {
+            const sceneHeartsContainer = document.getElementById('sceneHearts');
+            sceneHeartsContainer.innerHTML = ''; // Limpiar primero
+            
+            const numberOfHearts = 15;
+
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'scene-heart';
+                heart.innerHTML = '💕';
+                
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.bottom = Math.random() * 60 + 20 + '%';
+                
+                const duration = Math.random() * 3 + 3;
+                heart.style.animationDuration = duration + 's';
+                
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                
+                sceneHeartsContainer.appendChild(heart);
+            }
+        }
+
+        // ===== MOSTRAR MENSAJE SORPRESA ORIGINAL =====
+        function showSurprise() {
+            const surpriseMessage = document.getElementById('surpriseMessage');
+            surpriseMessage.classList.add('show');
+            
+            // Iniciar música en la primera interacción
+            startMusicWithFade();
+            
+            createExplosionHearts();
+        }
+
+        // ===== CERRAR MENSAJE SORPRESA =====
+        function closeSurprise() {
+            const surpriseMessage = document.getElementById('surpriseMessage');
+            surpriseMessage.classList.remove('show');
+        }
+
+        // ===== MOSTRAR MODAL MINECRAFT/VOXEL - INICIAR MINI-HISTORIA =====
+        function showMinecraftModal() {
+            const modal = document.getElementById('minecraftModal');
+            modal.classList.add('show');
+            
+            // Iniciar música en la primera interacción
+            startMusicWithFade();
+            
+            // Crear corazones en la escena
+            createSceneHearts();
+            
+            // OCULTAR BOTONES DE PREGUNTA AL INICIO
+            const question = document.getElementById('valentineQuestion');
+            question.classList.add('hidden');
+            
+            // INICIAR LA MINI-HISTORIA AUTOMÁTICAMENTE
+            startMiniStory();
+        }
+
+        // ===== MINI-HISTORIA DE 10 SEGUNDOS =====
+        // PUEDES MODIFICAR LOS TIEMPOS DE CADA ESCENA AQUÍ:
+        // - ESCENA 1: 0-3 segundos
+        // - ESCENA 2: 3-6 segundos  
+        // - ESCENA 3: 6-10 segundos
+        
+        function startMiniStory() {
+            const boy = document.getElementById('voxelBoy');
+            const girl = document.querySelector('.voxel-character');
+            const wolf = document.querySelector('.voxel-wolf');
+            const wolfTail = document.querySelector('.wolf-tail');
+            const text1 = document.getElementById('storyText1');
+            const text3 = document.getElementById('storyText3');
+            const question = document.getElementById('valentineQuestion');
+            
+            // ===== ESCENA 1 (0-3s): Niña con lobito y flores =====
+            // Mostrar texto 1
+            setTimeout(() => {
+                text1.classList.add('show');
+            }, 500); // ← MODIFICAR cuándo aparece el texto
+            
+            // Corazones iniciales
+            setTimeout(() => {
+                createSceneHearts();
+            }, 1000);
+            
+            // Ocultar texto 1
+            setTimeout(() => {
+                text1.classList.remove('show');
+            }, 3000); // ← MODIFICAR fin de ESCENA 1 (3s)
+            
+            // ===== ESCENA 2 (3-6s): Chico entra caminando =====
+            setTimeout(() => {
+                // Chico entra desde la derecha
+                boy.style.opacity = '1';
+                boy.classList.add('walking-in');
+                
+                // Animar piernas caminando
+                const boyLegs = document.querySelectorAll('.boy-leg');
+                boyLegs.forEach(leg => leg.classList.add('walking'));
+                
+                // Niña voltea hacia el chico
+                setTimeout(() => {
+                    girl.classList.add('looking-right');
+                }, 500);
+                
+                // Dejar de caminar cuando llega
+                setTimeout(() => {
+                    boyLegs.forEach(leg => leg.classList.remove('walking'));
+                }, 2500);
+                
+            }, 3000); // ← INICIO de ESCENA 2 (3s)
+            
+            // Acercarse y tomarse de la mano
+            setTimeout(() => {
+                girl.classList.add('move-closer-story');
+                boy.classList.add('move-closer-story');
+                
+                // Extender brazos después de acercarse
+                setTimeout(() => {
+                    const girlArmRight = document.querySelector('.voxel-arm-right');
+                    const boyArmLeft = document.querySelector('.boy-arm-left');
+                    girlArmRight.classList.add('reaching');
+                    boyArmLeft.classList.add('reaching');
+                }, 1000);
+                
+            }, 4500); // ← MODIFICAR cuándo se acercan
+            
+            // ===== ESCENA 3 (6-10s): Abrazo y pregunta final =====
+            setTimeout(() => {
+                // Abrazo
+                girl.classList.add('final-hug');
+                boy.classList.add('final-hug');
+                
+                // Lobo salta feliz
+                wolfTail.classList.add('excited');
+                wolf.classList.add('jumping');
+                
+                setTimeout(() => {
+                    wolf.classList.remove('jumping');
+                    // Saltar de nuevo
+                    setTimeout(() => {
+                        wolf.classList.add('jumping');
+                        setTimeout(() => wolf.classList.remove('jumping'), 600);
+                    }, 800);
+                }, 600);
+                
+                // Explosión de corazones y partículas
+                createStoryHeartExplosion();
+                createSparkles();
+                
+            }, 6000); // ← INICIO de ESCENA 3 (6s)
+            
+            // Mostrar texto final y botones
+            setTimeout(() => {
+                text3.classList.add('show');
+                question.classList.remove('hidden');
+                question.classList.add('story-end');
+            }, 7500); // ← MODIFICAR cuándo aparece la pregunta final
+        }
+
+        // ===== CREAR EXPLOSIÓN DE CORAZONES DE LA HISTORIA =====
+        function createStoryHeartExplosion() {
+            const scene = document.querySelector('.voxel-scene');
+            const numberOfHearts = 25;
+            
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = '30px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '50';
+                heart.style.left = '47%';
+                heart.style.bottom = '45%';
+                
+                scene.appendChild(heart);
+                
+                const angle = (Math.PI * 2 * i) / numberOfHearts;
+                const velocity = 100 + Math.random() * 100;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                heart.animate([
+                    { 
+                        transform: 'translate(0, 0) scale(0) rotate(0deg)',
+                        opacity: 0
+                    },
+                    { 
+                        transform: `translate(${tx}px, ${ty}px) scale(1) rotate(180deg)`,
+                        opacity: 1
+                    },
+                    { 
+                        transform: `translate(${tx * 1.5}px, ${ty * 1.5}px) scale(0) rotate(360deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 2000,
+                    delay: i * 30,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                }).onfinish = () => heart.remove();
+            }
+        }
+
+        // ===== CREAR PARTÍCULAS BRILLANTES =====
+        function createSparkles() {
+            const scene = document.querySelector('.voxel-scene');
+            const sparkleEmojis = ['✨', '⭐', '🌟', '💫'];
+            const numberOfSparkles = 15;
+            
+            for (let i = 0; i < numberOfSparkles; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.innerHTML = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+                    
+                    // Posiciones aleatorias alrededor de los personajes
+                    sparkle.style.left = (40 + Math.random() * 20) + '%';
+                    sparkle.style.bottom = (35 + Math.random() * 25) + '%';
+                    
+                    scene.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1500);
+                }, i * 100);
+            }
+        }
+
+        // ===== CERRAR MODAL MINECRAFT Y RESETEAR TODO =====
+        function closeMinecraftModal() {
+            const modal = document.getElementById('minecraftModal');
+            modal.classList.remove('show');
+            
+            // Reset completo para que la historia se pueda reproducir de nuevo
+            setTimeout(() => {
+                // Resetear pregunta y mensajes
+                const question = document.getElementById('valentineQuestion');
+                const confirmationMsg = document.getElementById('confirmationMessage');
+                const text1 = document.getElementById('storyText1');
+                const text3 = document.getElementById('storyText3');
+                
+                question.classList.remove('hidden', 'story-end');
+                confirmationMsg.classList.remove('show');
+                text1.classList.remove('show');
+                text3.classList.remove('show');
+                
+                // Resetear personajes y animaciones
+                const boy = document.getElementById('voxelBoy');
+                const girl = document.querySelector('.voxel-character');
+                const wolf = document.querySelector('.voxel-wolf');
+                const wolfTail = document.querySelector('.wolf-tail');
+                const girlArmRight = document.querySelector('.voxel-arm-right');
+                const boyArmLeft = document.querySelector('.boy-arm-left');
+                const boyLegs = document.querySelectorAll('.boy-leg');
+                
+                // Remover todas las clases de animación
+                boy.classList.remove('entering', 'walking-in', 'move-closer-story', 'final-hug');
+                boy.style.opacity = '0';
+                boy.style.left = '-100px';
+                
+                girl.classList.remove('looking-right', 'move-closer-story', 'final-hug');
+                girl.style.left = '30%';
+                girl.style.transform = 'translateX(-50%)';
+                
+                wolf.classList.remove('jumping');
+                wolfTail.classList.remove('excited');
+                
+                girlArmRight.classList.remove('reaching');
+                boyArmLeft.classList.remove('reaching');
+                
+                boyLegs.forEach(leg => leg.classList.remove('walking'));
+                
+                // Limpiar todos los corazones y partículas que puedan quedar
+                const scene = document.querySelector('.voxel-scene');
+                const particles = scene.querySelectorAll('.big-heart, .sparkle, div[style*="position: absolute"]');
+                particles.forEach(particle => {
+                    if (particle.innerHTML && (particle.innerHTML.includes('💕') || 
+                        particle.innerHTML.includes('💖') || 
+                        particle.innerHTML.includes('✨') || 
+                        particle.innerHTML.includes('⭐') || 
+                        particle.innerHTML.includes('🌟') || 
+                        particle.innerHTML.includes('💫'))) {
+                        particle.remove();
+                    }
+                });
+                
+                // Limpiar corazones de escena
+                const sceneHearts = document.getElementById('sceneHearts');
+                sceneHearts.innerHTML = '';
+                
+            }, 500);
+        }
+
+        // ===== RESPONDER SÍ - DESPUÉS DE LA HISTORIA =====
+        function answerYes() {
+            // Ocultar pregunta
+            document.getElementById('valentineQuestion').style.display = 'none';
+            
+            // Mostrar mensaje de confirmación
+            setTimeout(() => {
+                document.getElementById('confirmationMessage').classList.add('show');
+            }, 500);
+            
+            // Explosión final de corazones
+            createModalExplosionHearts();
+        }
+
+        // ===== CREAR CORAZONES ROMÁNTICOS PEQUEÑOS =====
+        function createRomanticHearts() {
+            const scene = document.querySelector('.voxel-scene');
+            const numberOfHearts = 15;
+            
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💕';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = '20px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '50';
+                
+                // Posiciones alrededor de los personajes
+                const centerX = 47;
+                const centerY = 40;
+                const angle = (Math.PI * 2 * i) / numberOfHearts;
+                const radius = 15;
+                
+                heart.style.left = (centerX + Math.cos(angle) * radius) + '%';
+                heart.style.bottom = (centerY + Math.sin(angle) * radius) + '%';
+                
+                scene.appendChild(heart);
+                
+                // Animación de flotación
+                heart.animate([
+                    { 
+                        transform: 'translateY(0) scale(0.5)',
+                        opacity: 0
+                    },
+                    { 
+                        transform: 'translateY(-50px) scale(1)',
+                        opacity: 1
+                    },
+                    { 
+                        transform: 'translateY(-100px) scale(0.5)',
+                        opacity: 0
+                    }
+                ], {
+                    duration: 2000,
+                    delay: i * 100,
+                    easing: 'ease-out'
+                }).onfinish = () => heart.remove();
+            }
+        }
+
+        // ===== CREAR CORAZONES GRANDES DURANTE ABRAZO =====
+        function createBigHearts() {
+            const scene = document.querySelector('.voxel-scene');
+            const positions = [
+                { left: '35%', bottom: '50%', delay: 0 },
+                { left: '60%', bottom: '55%', delay: 300 },
+                { left: '47%', bottom: '65%', delay: 600 }
+            ];
+            
+            positions.forEach(pos => {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'big-heart';
+                    heart.innerHTML = '💖';
+                    heart.style.left = pos.left;
+                    heart.style.bottom = pos.bottom;
+                    
+                    scene.appendChild(heart);
+                    
+                    // Remover después de la animación
+                    setTimeout(() => heart.remove(), 4000);
+                }, pos.delay);
+            });
+        }
+
+        // ===== CORAZONES EXPLOSIVOS (MENSAJE ORIGINAL) =====
+        function createExplosionHearts() {
+            const numberOfHearts = 30;
+            
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.style.position = 'fixed';
+                heart.style.left = '50%';
+                heart.style.top = '50%';
+                heart.style.fontSize = '20px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                
+                document.body.appendChild(heart);
+                
+                const angle = (Math.PI * 2 * i) / numberOfHearts;
+                const velocity = 200 + Math.random() * 200;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                heart.animate([
+                    { 
+                        transform: 'translate(-50%, -50%) translate(0, 0) scale(1)',
+                        opacity: 1
+                    },
+                    { 
+                        transform: `translate(-50%, -50%) translate(${tx}px, ${ty}px) scale(0)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 1500,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                }).onfinish = () => heart.remove();
+            }
+        }
+
+        // ===== CORAZONES EXPLOSIVOS (MODAL MINECRAFT) =====
+        function createModalExplosionHearts() {
+            const modal = document.querySelector('.minecraft-container');
+            const numberOfHearts = 40;
+            
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.style.position = 'absolute';
+                heart.style.left = '50%';
+                heart.style.top = '50%';
+                heart.style.fontSize = '25px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '100';
+                
+                modal.appendChild(heart);
+                
+                const angle = (Math.PI * 2 * i) / numberOfHearts;
+                const velocity = 150 + Math.random() * 150;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                heart.animate([
+                    { 
+                        transform: 'translate(-50%, -50%) translate(0, 0) scale(1) rotate(0deg)',
+                        opacity: 1
+                    },
+                    { 
+                        transform: `translate(-50%, -50%) translate(${tx}px, ${ty}px) scale(0) rotate(360deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 2000,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                }).onfinish = () => heart.remove();
+            }
+        }
+
+        // ===== INICIALIZAR TODO AL CARGAR LA PÁGINA =====
+        window.addEventListener('load', () => {
+            createStars();
+            createHearts();
+        });
+
+        // ===== CERRAR MODALES CON TECLA ESC =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSurprise();
+                closeMinecraftModal();
+                closePhotoGallery();
+                closeFlowerGarden();
+            }
+        });
+
+        // ===== CERRAR MODAL AL HACER CLIC FUERA =====
+        document.getElementById('minecraftModal').addEventListener('click', (e) => {
+            if (e.target.id === 'minecraftModal') {
+                closeMinecraftModal();
+            }
+        });
+
+        // ===== MOSTRAR GALERÍA DE FOTOS =====
+        function showPhotoGallery() {
+            const photoSection = document.getElementById('photoSection');
+            photoSection.classList.add('show');
+            
+            // Iniciar música en la primera interacción
+            startMusicWithFade();
+        }
+
+        // ===== CERRAR GALERÍA DE FOTOS =====
+        function closePhotoGallery() {
+            const photoSection = document.getElementById('photoSection');
+            photoSection.classList.remove('show');
+        }
+
+        // ===== MOSTRAR JARDÍN DE FLORES =====
+        function showFlowerGarden() {
+            const flowerGarden = document.getElementById('flowerGarden');
+            flowerGarden.classList.add('show');
+            
+            // Iniciar música en la primera interacción
+            startMusicWithFade();
+        }
+
+        // ===== CERRAR JARDÍN DE FLORES =====
+        function closeFlowerGarden() {
+            const flowerGarden = document.getElementById('flowerGarden');
+            flowerGarden.classList.remove('show');
+        }
+
+        // Cerrar galería al hacer clic fuera
+        document.getElementById('photoSection').addEventListener('click', (e) => {
+            if (e.target.id === 'photoSection') {
+                closePhotoGallery();
+            }
+        });
+
+        // Cerrar jardín al hacer clic fuera
+        document.getElementById('flowerGarden').addEventListener('click', (e) => {
+            if (e.target.id === 'flowerGarden') {
+                closeFlowerGarden();
+            }
+        });
+    </script>
+</body>
+</html>
